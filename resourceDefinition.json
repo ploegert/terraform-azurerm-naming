@@ -62,7 +62,139 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "resourceGroup",
-    "slug": "agw",
+    "slug": "ag",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_pip",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-pip",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_frontend_port",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-fe-port",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_frontend_ip_configuration",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-fe-ipconfig",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_backend_address_pool",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-be-ip-pool",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_backend_https_setting",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-be-https-setting",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_http_listener",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-http-lstn",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_http_listener_frontend_ip_configuration",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-http-lstn-fe-ipconfig",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_http_listener_frontend_port",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-http-lstn-fe-port",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_request_routing_rule",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-route-rule",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_request_routing_http_listener",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-route-lstn",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_request_routing_backend_address_pool",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-route-be-pool",
+    "dashes": true
+  },
+  {
+    "name": "application_gateway_request_routing_backend_http_settings",
+    "length": {
+      "min": 1,
+      "max": 80
+    },
+    "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
+    "scope": "resourceGroup",
+    "slug": "ag-route-http-settings",
     "dashes": true
   },
   {

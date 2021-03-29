@@ -30,6 +30,54 @@ output "application_gateway" {
   value = local.az.application_gateway
 }
 
+output "application_gateway_backend_address_pool" {
+  value = local.az.application_gateway_backend_address_pool
+}
+
+output "application_gateway_backend_https_setting" {
+  value = local.az.application_gateway_backend_https_setting
+}
+
+output "application_gateway_frontend_ip_configuration" {
+  value = local.az.application_gateway_frontend_ip_configuration
+}
+
+output "application_gateway_frontend_port" {
+  value = local.az.application_gateway_frontend_port
+}
+
+output "application_gateway_http_listener" {
+  value = local.az.application_gateway_http_listener
+}
+
+output "application_gateway_http_listener_frontend_ip_configuration" {
+  value = local.az.application_gateway_http_listener_frontend_ip_configuration
+}
+
+output "application_gateway_http_listener_frontend_port" {
+  value = local.az.application_gateway_http_listener_frontend_port
+}
+
+output "application_gateway_pip" {
+  value = local.az.application_gateway_pip
+}
+
+output "application_gateway_request_routing_backend_address_pool" {
+  value = local.az.application_gateway_request_routing_backend_address_pool
+}
+
+output "application_gateway_request_routing_backend_http_settings" {
+  value = local.az.application_gateway_request_routing_backend_http_settings
+}
+
+output "application_gateway_request_routing_http_listener" {
+  value = local.az.application_gateway_request_routing_http_listener
+}
+
+output "application_gateway_request_routing_rule" {
+  value = local.az.application_gateway_request_routing_rule
+}
+
 output "application_insights" {
   value = local.az.application_insights
 }

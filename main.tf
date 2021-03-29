@@ -87,10 +87,130 @@ locals {
       regex       = "^[a-zA-Z0-9-]+$"
     }
     application_gateway = {
-      name        = substr(join("-", compact([local.prefix, "agw", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "agw", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "ag", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "agw"
+      slug        = "ag"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_backend_address_pool = {
+      name        = substr(join("-", compact([local.prefix, "ag-be-ip-pool", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-be-ip-pool", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-be-ip-pool"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_backend_https_setting = {
+      name        = substr(join("-", compact([local.prefix, "ag-be-https-setting", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-be-https-setting", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-be-https-setting"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_frontend_ip_configuration = {
+      name        = substr(join("-", compact([local.prefix, "ag-fe-ipconfig", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-fe-ipconfig", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-fe-ipconfig"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_frontend_port = {
+      name        = substr(join("-", compact([local.prefix, "ag-fe-port", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-fe-port", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-fe-port"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_http_listener = {
+      name        = substr(join("-", compact([local.prefix, "ag-http-lstn", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-http-lstn", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-http-lstn"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_http_listener_frontend_ip_configuration = {
+      name        = substr(join("-", compact([local.prefix, "ag-http-lstn-fe-ipconfig", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-http-lstn-fe-ipconfig", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-http-lstn-fe-ipconfig"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_http_listener_frontend_port = {
+      name        = substr(join("-", compact([local.prefix, "ag-http-lstn-fe-port", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-http-lstn-fe-port", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-http-lstn-fe-port"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_pip = {
+      name        = substr(join("-", compact([local.prefix, "ag-pip", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-pip", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-pip"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_request_routing_backend_address_pool = {
+      name        = substr(join("-", compact([local.prefix, "ag-route-be-pool", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-route-be-pool", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-route-be-pool"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_request_routing_backend_http_settings = {
+      name        = substr(join("-", compact([local.prefix, "ag-route-http-settings", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-route-http-settings", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-route-http-settings"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_request_routing_http_listener = {
+      name        = substr(join("-", compact([local.prefix, "ag-route-lstn", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-route-lstn", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-route-lstn"
+      min_length  = 1
+      max_length  = 80
+      scope       = "resourceGroup"
+      regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
+    }
+    application_gateway_request_routing_rule = {
+      name        = substr(join("-", compact([local.prefix, "ag-route-rule", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "ag-route-rule", local.suffix_unique])), 0, 80)
+      dashes      = true
+      slug        = "ag-route-rule"
       min_length  = 1
       max_length  = 80
       scope       = "resourceGroup"
@@ -2281,6 +2401,54 @@ locals {
     application_gateway = {
       valid_name        = length(regexall(local.az.application_gateway.regex, local.az.application_gateway.name)) > 0 && length(local.az.application_gateway.name) > local.az.application_gateway.min_length
       valid_name_unique = length(regexall(local.az.application_gateway.regex, local.az.application_gateway.name_unique)) > 0
+    }
+    application_gateway_backend_address_pool = {
+      valid_name        = length(regexall(local.az.application_gateway_backend_address_pool.regex, local.az.application_gateway_backend_address_pool.name)) > 0 && length(local.az.application_gateway_backend_address_pool.name) > local.az.application_gateway_backend_address_pool.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_backend_address_pool.regex, local.az.application_gateway_backend_address_pool.name_unique)) > 0
+    }
+    application_gateway_backend_https_setting = {
+      valid_name        = length(regexall(local.az.application_gateway_backend_https_setting.regex, local.az.application_gateway_backend_https_setting.name)) > 0 && length(local.az.application_gateway_backend_https_setting.name) > local.az.application_gateway_backend_https_setting.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_backend_https_setting.regex, local.az.application_gateway_backend_https_setting.name_unique)) > 0
+    }
+    application_gateway_frontend_ip_configuration = {
+      valid_name        = length(regexall(local.az.application_gateway_frontend_ip_configuration.regex, local.az.application_gateway_frontend_ip_configuration.name)) > 0 && length(local.az.application_gateway_frontend_ip_configuration.name) > local.az.application_gateway_frontend_ip_configuration.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_frontend_ip_configuration.regex, local.az.application_gateway_frontend_ip_configuration.name_unique)) > 0
+    }
+    application_gateway_frontend_port = {
+      valid_name        = length(regexall(local.az.application_gateway_frontend_port.regex, local.az.application_gateway_frontend_port.name)) > 0 && length(local.az.application_gateway_frontend_port.name) > local.az.application_gateway_frontend_port.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_frontend_port.regex, local.az.application_gateway_frontend_port.name_unique)) > 0
+    }
+    application_gateway_http_listener = {
+      valid_name        = length(regexall(local.az.application_gateway_http_listener.regex, local.az.application_gateway_http_listener.name)) > 0 && length(local.az.application_gateway_http_listener.name) > local.az.application_gateway_http_listener.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_http_listener.regex, local.az.application_gateway_http_listener.name_unique)) > 0
+    }
+    application_gateway_http_listener_frontend_ip_configuration = {
+      valid_name        = length(regexall(local.az.application_gateway_http_listener_frontend_ip_configuration.regex, local.az.application_gateway_http_listener_frontend_ip_configuration.name)) > 0 && length(local.az.application_gateway_http_listener_frontend_ip_configuration.name) > local.az.application_gateway_http_listener_frontend_ip_configuration.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_http_listener_frontend_ip_configuration.regex, local.az.application_gateway_http_listener_frontend_ip_configuration.name_unique)) > 0
+    }
+    application_gateway_http_listener_frontend_port = {
+      valid_name        = length(regexall(local.az.application_gateway_http_listener_frontend_port.regex, local.az.application_gateway_http_listener_frontend_port.name)) > 0 && length(local.az.application_gateway_http_listener_frontend_port.name) > local.az.application_gateway_http_listener_frontend_port.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_http_listener_frontend_port.regex, local.az.application_gateway_http_listener_frontend_port.name_unique)) > 0
+    }
+    application_gateway_pip = {
+      valid_name        = length(regexall(local.az.application_gateway_pip.regex, local.az.application_gateway_pip.name)) > 0 && length(local.az.application_gateway_pip.name) > local.az.application_gateway_pip.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_pip.regex, local.az.application_gateway_pip.name_unique)) > 0
+    }
+    application_gateway_request_routing_backend_address_pool = {
+      valid_name        = length(regexall(local.az.application_gateway_request_routing_backend_address_pool.regex, local.az.application_gateway_request_routing_backend_address_pool.name)) > 0 && length(local.az.application_gateway_request_routing_backend_address_pool.name) > local.az.application_gateway_request_routing_backend_address_pool.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_request_routing_backend_address_pool.regex, local.az.application_gateway_request_routing_backend_address_pool.name_unique)) > 0
+    }
+    application_gateway_request_routing_backend_http_settings = {
+      valid_name        = length(regexall(local.az.application_gateway_request_routing_backend_http_settings.regex, local.az.application_gateway_request_routing_backend_http_settings.name)) > 0 && length(local.az.application_gateway_request_routing_backend_http_settings.name) > local.az.application_gateway_request_routing_backend_http_settings.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_request_routing_backend_http_settings.regex, local.az.application_gateway_request_routing_backend_http_settings.name_unique)) > 0
+    }
+    application_gateway_request_routing_http_listener = {
+      valid_name        = length(regexall(local.az.application_gateway_request_routing_http_listener.regex, local.az.application_gateway_request_routing_http_listener.name)) > 0 && length(local.az.application_gateway_request_routing_http_listener.name) > local.az.application_gateway_request_routing_http_listener.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_request_routing_http_listener.regex, local.az.application_gateway_request_routing_http_listener.name_unique)) > 0
+    }
+    application_gateway_request_routing_rule = {
+      valid_name        = length(regexall(local.az.application_gateway_request_routing_rule.regex, local.az.application_gateway_request_routing_rule.name)) > 0 && length(local.az.application_gateway_request_routing_rule.name) > local.az.application_gateway_request_routing_rule.min_length
+      valid_name_unique = length(regexall(local.az.application_gateway_request_routing_rule.regex, local.az.application_gateway_request_routing_rule.name_unique)) > 0
     }
     application_insights = {
       valid_name        = length(regexall(local.az.application_insights.regex, local.az.application_insights.name)) > 0 && length(local.az.application_insights.name) > local.az.application_insights.min_length
