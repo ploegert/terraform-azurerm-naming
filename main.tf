@@ -97,10 +97,10 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     application_insights = {
-      name        = substr(join("-", compact([local.prefix, "appi", local.suffix])), 0, 260)
-      name_unique = substr(join("-", compact([local.prefix, "appi", local.suffix_unique])), 0, 260)
+      name        = substr(join("-", compact([local.prefix, "ai", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "ai", local.suffix_unique])), 0, 260)
       dashes      = true
-      slug        = "appi"
+      slug        = "ai"
       min_length  = 10
       max_length  = 260
       scope       = "resourceGroup"
@@ -1227,10 +1227,10 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     log_analytics_workspace = {
-      name        = substr(join("-", compact([local.prefix, "log", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "log", local.suffix_unique])), 0, 63)
+      name        = substr(join("-", compact([local.prefix, "law", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "law", local.suffix_unique])), 0, 63)
       dashes      = true
-      slug        = "log"
+      slug        = "law"
       min_length  = 4
       max_length  = 63
       scope       = "parent"

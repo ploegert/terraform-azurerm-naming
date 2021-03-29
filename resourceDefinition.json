@@ -73,7 +73,7 @@
     },
     "regex": "^[^%\\\\&?/]+$",
     "scope": "resourceGroup",
-    "slug": "appi",
+    "slug": "ai",
     "dashes": true
   },
   {
@@ -1151,7 +1151,7 @@
     },
     "regex": "^(?=.{4,63}$)[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]$",
     "scope": "parent",
-    "slug": "log",
+    "slug": "law",
     "dashes": true
   },
   {
