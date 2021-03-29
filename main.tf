@@ -2127,10 +2127,10 @@ locals {
       regex       = "^[a-zA-Z0-9-_]+$"
     }
     subnet = {
-      name        = substr(join("-", compact([local.prefix, "snet", local.suffix])), 0, 80)
-      name_unique = substr(join("-", compact([local.prefix, "snet", local.suffix_unique])), 0, 80)
+      name        = substr(join("-", compact([local.prefix, "subnet", local.suffix])), 0, 80)
+      name_unique = substr(join("-", compact([local.prefix, "subnet", local.suffix_unique])), 0, 80)
       dashes      = true
-      slug        = "snet"
+      slug        = "subnet"
       min_length  = 1
       max_length  = 80
       scope       = "parent"
@@ -2147,10 +2147,10 @@ locals {
       regex       = "^[a-zA-Z0-9-._\\(\\)]+$"
     }
     traffic_manager_profile = {
-      name        = substr(join("-", compact([local.prefix, "traf", local.suffix])), 0, 63)
-      name_unique = substr(join("-", compact([local.prefix, "traf", local.suffix_unique])), 0, 63)
+      name        = substr(join("-", compact([local.prefix, "tm", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "tm", local.suffix_unique])), 0, 63)
       dashes      = true
-      slug        = "traf"
+      slug        = "tm"
       min_length  = 1
       max_length  = 63
       scope       = "global"

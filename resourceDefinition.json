@@ -1998,7 +1998,7 @@
     },
     "regex": "^(?=.{1,80}$)[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$",
     "scope": "parent",
-    "slug": "snet",
+    "slug": "subnet",
     "dashes": true
   },
   {
@@ -2020,7 +2020,7 @@
     },
     "regex": "^(?=.{1,63}$)[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$",
     "scope": "global",
-    "slug": "traf",
+    "slug": "tm",
     "dashes": true
   },
   {
