@@ -1136,6 +1136,16 @@ locals {
       scope       = "resourceGroup"
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-_.]+[a-zA-Z0-9]$"
     }
+    kubernetes_cluster_node_pool = {
+      name        = substr(join("", compact([local.prefix_safe, "akspoo", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("", compact([local.prefix_safe, "akspoo", local.suffix_unique_safe])), 0, 63)
+      dashes      = false
+      slug        = "akspoo"
+      min_length  = 1
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9]+$"
+    }
     kusto_cluster = {
       name        = substr(join("", compact([local.prefix_safe, "kc", local.suffix_safe])), 0, 22)
       name_unique = substr(join("", compact([local.prefix_safe, "kc", local.suffix_unique_safe])), 0, 22)
@@ -2687,6 +2697,10 @@ locals {
     kubernetes_cluster = {
       valid_name        = length(regexall(local.az.kubernetes_cluster.regex, local.az.kubernetes_cluster.name)) > 0 && length(local.az.kubernetes_cluster.name) > local.az.kubernetes_cluster.min_length
       valid_name_unique = length(regexall(local.az.kubernetes_cluster.regex, local.az.kubernetes_cluster.name_unique)) > 0
+    }
+    kubernetes_cluster_node_pool = {
+      valid_name        = length(regexall(local.az.kubernetes_cluster_node_pool.regex, local.az.kubernetes_cluster_node_pool.name)) > 0 && length(local.az.kubernetes_cluster_node_pool.name) > local.az.kubernetes_cluster_node_pool.min_length
+      valid_name_unique = length(regexall(local.az.kubernetes_cluster_node_pool.regex, local.az.kubernetes_cluster_node_pool.name_unique)) > 0
     }
     kusto_cluster = {
       valid_name        = length(regexall(local.az.kusto_cluster.regex, local.az.kusto_cluster.name)) > 0 && length(local.az.kusto_cluster.name) > local.az.kusto_cluster.min_length

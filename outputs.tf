@@ -446,6 +446,10 @@ output "kubernetes_cluster" {
   value = local.az.kubernetes_cluster
 }
 
+output "kubernetes_cluster_node_pool" {
+  value = local.az.kubernetes_cluster_node_pool
+}
+
 output "kusto_cluster" {
   value = local.az.kusto_cluster
 }
