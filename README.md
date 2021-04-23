@@ -42,8 +42,16 @@ Other advanced usages will be explained in the [Advanced usage](#advanced-usage)
 - Run `make install` in the root directory of the repo.
 
 ## Modifying resources
-
 The resources are automatically generated using `go` to change the generation please change the file on the `templates` folder. To add a new resource, including its definition in the file `resourceDefinition.json`, and it will be automatically generated when `main.go` is run.
+
+1. Update the `resourceDefinition.json` to add the resource you want to add
+2. Execute go
+```powershell
+.\make.ps1 install
+go.exe run main.go
+```
+3. You should now see your main.tf has been updated to include the resource
+
 
 # Current implementation
 

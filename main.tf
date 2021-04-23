@@ -1616,6 +1616,26 @@ locals {
       scope       = "parent"
       regex       = "^[a-zA-Z0-9-_]+$"
     }
+    postgresql_hyperscale_coord_name = {
+      name        = substr(join("-", compact([local.prefix, "psql-hyp-coord", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "psql-hyp-coord", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "psql-hyp-coord"
+      min_length  = 3
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
+    postgresql_hyperscale_server_group = {
+      name        = substr(join("-", compact([local.prefix, "psql-hyp-svr", local.suffix])), 0, 63)
+      name_unique = substr(join("-", compact([local.prefix, "psql-hyp-svr", local.suffix_unique])), 0, 63)
+      dashes      = true
+      slug        = "psql-hyp-svr"
+      min_length  = 3
+      max_length  = 63
+      scope       = "global"
+      regex       = "^[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$"
+    }
     postgresql_server = {
       name        = substr(join("-", compact([local.prefix, "psql", local.suffix])), 0, 63)
       name_unique = substr(join("-", compact([local.prefix, "psql", local.suffix_unique])), 0, 63)
@@ -3009,6 +3029,14 @@ locals {
     postgresql_firewall_rule = {
       valid_name        = length(regexall(local.az.postgresql_firewall_rule.regex, local.az.postgresql_firewall_rule.name)) > 0 && length(local.az.postgresql_firewall_rule.name) > local.az.postgresql_firewall_rule.min_length
       valid_name_unique = length(regexall(local.az.postgresql_firewall_rule.regex, local.az.postgresql_firewall_rule.name_unique)) > 0
+    }
+    postgresql_hyperscale_coord_name = {
+      valid_name        = length(regexall(local.az.postgresql_hyperscale_coord_name.regex, local.az.postgresql_hyperscale_coord_name.name)) > 0 && length(local.az.postgresql_hyperscale_coord_name.name) > local.az.postgresql_hyperscale_coord_name.min_length
+      valid_name_unique = length(regexall(local.az.postgresql_hyperscale_coord_name.regex, local.az.postgresql_hyperscale_coord_name.name_unique)) > 0
+    }
+    postgresql_hyperscale_server_group = {
+      valid_name        = length(regexall(local.az.postgresql_hyperscale_server_group.regex, local.az.postgresql_hyperscale_server_group.name)) > 0 && length(local.az.postgresql_hyperscale_server_group.name) > local.az.postgresql_hyperscale_server_group.min_length
+      valid_name_unique = length(regexall(local.az.postgresql_hyperscale_server_group.regex, local.az.postgresql_hyperscale_server_group.name_unique)) > 0
     }
     postgresql_server = {
       valid_name        = length(regexall(local.az.postgresql_server.regex, local.az.postgresql_server.name)) > 0 && length(local.az.postgresql_server.name) > local.az.postgresql_server.min_length

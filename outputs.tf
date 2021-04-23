@@ -638,6 +638,14 @@ output "postgresql_firewall_rule" {
   value = local.az.postgresql_firewall_rule
 }
 
+output "postgresql_hyperscale_coord_name" {
+  value = local.az.postgresql_hyperscale_coord_name
+}
+
+output "postgresql_hyperscale_server_group" {
+  value = local.az.postgresql_hyperscale_server_group
+}
+
 output "postgresql_server" {
   value = local.az.postgresql_server
 }

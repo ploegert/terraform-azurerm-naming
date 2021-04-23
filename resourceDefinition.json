@@ -1562,6 +1562,28 @@
     "dashes": true
   },
   {
+    "name": "postgresql_hyperscale_server_group",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
+    "scope": "global",
+    "slug": "psql-hyp-svr",
+    "dashes": true
+  },
+  {
+    "name": "postgresql_hyperscale_coord_name",
+    "length": {
+      "min": 3,
+      "max": 63
+    },
+    "regex": "^(?=.{3,63}$)[a-z0-9][a-zA-Z0-9-]+[a-z0-9]$",
+    "scope": "global",
+    "slug": "psql-hyp-coord",
+    "dashes": true
+  },
+  {
     "name": "postgresql_server",
     "length": {
       "min": 3,
